@@ -1,3 +1,4 @@
+require "nasty/command"
 require "nasty/version"
 
 module Nasty
