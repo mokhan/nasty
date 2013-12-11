@@ -10,8 +10,8 @@ class CompositeCommand
     @last = last
   end
 
-  def run
-    @first.run
-    @last.run
+  def run(*args)
+    @first.run(*args)
+    @last.run(*args)
   end
 end
