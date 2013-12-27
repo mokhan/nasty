@@ -1,5 +1,5 @@
 module Nasty
-  module BindingBehaviour
+  module ExposeBinding
     def get_binder
       binding
     end
