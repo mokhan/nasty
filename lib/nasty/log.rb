@@ -8,7 +8,9 @@ module Nasty
       end
 
       def for(target)
-        @@log_factory || ConsoleLogFactory.new
+        unless class_variable_defined? :@@log_factory
+          @@log_factory = ConsoleLogFactory.new
+        end
         @@log_factory.create_for(target)
       end
     end
@@ -22,6 +24,12 @@ module Nasty
 
     def create_for(target)
       @logger
+    end
+  end
+
+  module Logging
+    def logger
+      Nasty::Log.for(self)
     end
   end
 end

@@ -28,5 +28,11 @@ module Nasty
         logger.should have_received(:debug).with("hi there")
       end
     end
+
+    context "logger" do
+      it "should be able to call the logger from anywhere" do
+        logger.debug("blah")
+      end
+    end
   end
 end
