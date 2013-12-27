@@ -24,6 +24,10 @@ module Nasty
         Log.for(self).debug("hi there")
       end
 
+      after :each do
+        Log.unbind
+      end
+
       it "should log to the bound logger" do
         logger.should have_received(:debug).with("hi there")
       end

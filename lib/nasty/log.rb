@@ -13,6 +13,10 @@ module Nasty
         end
         @@log_factory.create_for(target)
       end
+
+      def unbind
+        remove_class_variable(:@@log_factory)
+      end
     end
   end
 
