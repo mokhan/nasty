@@ -11,7 +11,7 @@ module Nasty
     end
 
     class << self
-      def bind_resolver(&block)
+      def bind_factory(&block)
         @@factory = block
       end
 
