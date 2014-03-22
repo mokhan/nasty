@@ -1,5 +1,7 @@
 module Nasty
   class CompositeCommand
+    include Command
+
     def initialize(first, last)
       @first = first
       @last = last

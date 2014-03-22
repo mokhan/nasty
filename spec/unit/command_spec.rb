@@ -20,12 +20,13 @@ module Nasty
     context "without parameters" do
       let(:first_command) { SimpleCommand.new }
       let(:second_command) { SimpleCommand.new }
+      let(:third_command) { SimpleCommand.new }
 
-      it "chains two commands together" do
-        result = first_command.then(second_command)
-        result.run
+      it "chains multiple commands together" do
+        first_command.then(second_command).then(third_command).run
         first_command.ran?.should be_true
         second_command.ran?.should be_true
+        third_command.ran?.should be_true
       end
     end
 
